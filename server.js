@@ -90,8 +90,12 @@ io.on("connection", (socket) => {
   });
 });
 
+app.use(express.static("public"));
+
 app.get("/", (req, res) => {
-  res.send("Servidor Ilha Zenite Online!");
+  res.sendFile(
+    __dirname + "/public/Ilha_Zenite_Multiplayer_Conectado.html"
+  );
 });
 
 const PORT = process.env.PORT || 3000;
